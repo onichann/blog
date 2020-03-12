@@ -324,7 +324,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>3.9k字</p>
+        <p>4k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -441,7 +441,7 @@
 </blockquote>
 <p>这非常有趣，因为我们可以直接看到将要提交到子模块中的提交日志。 提交之后，你也可以运行 git log -p 查看这个信息。</p>
 <blockquote>
-<p>$ git log -p –submodule<br>commit 0a24cfc121a8a3c118e0105ae4ae4c00281cf7ae<br>Author: Scott Chacon <a href="mailto:&#x73;&#x63;&#x68;&#x61;&#x63;&#111;&#110;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;">&#x73;&#x63;&#x68;&#x61;&#x63;&#111;&#110;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a><br>Date:   Wed Sep 17 16:37:02 2014 +0200<br><br>    updating DbConnector for bug fixes<br><br>diff –git a/.gitmodules b/.gitmodules<br>index 6fc0b3d..fd1cc29 100644<br>— a/.gitmodules<br>+++ b/.gitmodules<br>@@ -1,3 +1,4 @@<br> [submodule “DbConnector”]<br>        path = DbConnector<br>        url = <a href="https://github.com/chaconinc/DbConnector" target="_blank" rel="noopener">https://github.com/chaconinc/DbConnector</a><br>+       branch = stable<br>Submodule DbConnector c3f01dc..c87d55d:<br>  &gt; catch non-null terminated lines<br> &gt; more robust error handling<br>  &gt; more efficient db routine<br>  &gt; better connection routine</p>
+<p>$ git log -p –submodule<br>commit 0a24cfc121a8a3c118e0105ae4ae4c00281cf7ae<br>Author: Scott Chacon <a href="mailto:&#115;&#99;&#x68;&#97;&#99;&#111;&#x6e;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#115;&#99;&#x68;&#97;&#99;&#111;&#x6e;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a><br>Date:   Wed Sep 17 16:37:02 2014 +0200<br><br>    updating DbConnector for bug fixes<br><br>diff –git a/.gitmodules b/.gitmodules<br>index 6fc0b3d..fd1cc29 100644<br>— a/.gitmodules<br>+++ b/.gitmodules<br>@@ -1,3 +1,4 @@<br> [submodule “DbConnector”]<br>        path = DbConnector<br>        url = <a href="https://github.com/chaconinc/DbConnector" target="_blank" rel="noopener">https://github.com/chaconinc/DbConnector</a><br>+       branch = stable<br>Submodule DbConnector c3f01dc..c87d55d:<br>  &gt; catch non-null terminated lines<br> &gt; more robust error handling<br>  &gt; more efficient db routine<br>  &gt; better connection routine</p>
 </blockquote>
 <p>当运行 <strong>git submodule update - -remote</strong> 时，Git 默认会尝试更新 所有 子模块， 所以如果有很多子模块的话，你可以传递想要更新的子模块的名字。比如：子模块路径：themes/material-x ,那么执行 <strong>git submodule update - -remote themes/material-x</strong>  即可。</p>
 <h4 id="从项目远端拉取上游更改"><a href="#从项目远端拉取上游更改" class="headerlink" title="从项目远端拉取上游更改"></a>从项目远端拉取上游更改</h4><p>现在，<strong>让我们站在协作者的视角</strong>，他有自己的 MainProject 仓库的本地克隆， 只是执行 git pull 获取你新提交的更改还不够：</p>
@@ -463,7 +463,9 @@
 <p><strong>到目前为止，当我们运行 git submodule update 从子模块仓库中抓取修改时， Git 将会获得这些改动并更新子目录中的文件，但是会将子仓库留在一个称作“游离的 HEAD”的状态。 这意味着没有本地工作分支（例如 “master” ）跟踪改动。 如果没有工作分支跟踪更改，也就意味着即便你将更改提交到了子模块，这些更改也很可能会在下次运行 git submodule update 时丢失。如果你想要在子模块中跟踪这些修改，还需要一些额外的步骤。</strong></p>
 <p><strong><font color=red>这一部分个人建议还是cd 到对应子模块 ,单独更新提交比较容易,个人使用的话，基本上就master分支,参考提示进行更新提交即可。如果子模块还需要进行切其他分支，这个就参考官方介绍,比较繁琐</font></strong></p>
 <h3 id="子模的块技巧"><a href="#子模的块技巧" class="headerlink" title="子模的块技巧"></a>子模的块技巧</h3><p>你可以做几件事情来让用子模块工作轻松一点儿。</p>
-<h4 id="子模块遍历"><a href="#子模块遍历" class="headerlink" title="子模块遍历"></a>子模块遍历</h4><p>todo…</p>
+<p><strong>子模块遍历、有用的别名</strong></p>
+<h3 id="子模块的问题"><a href="#子模块的问题" class="headerlink" title="子模块的问题"></a>子模块的问题</h3><p><strong>切换分支、从子目录切换到子模块</strong></p>
+<p><strong>这些你都可以从官方网站上看到介绍，目前使用不多故不多做讲解了。</strong></p>
 
       </div>
       
@@ -476,10 +478,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-11T23:08:26+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-12T21:29:42+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020-03-11 23:08</p>
+    <p>更新于 2020-03-12 21:29</p>
   </a>
 </div>
 
@@ -550,6 +552,30 @@
 
       
       
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/blog/2020/03/12/SonarQube7-4/" rel="prev" title="SonarQube7.4安装和使用">
+                                
+                                    SonarQube7.4安装和使用
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/SonarQube/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> SonarQube</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+          </div>
+      
     </section>
   </article>
 
@@ -606,7 +632,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#子模块"><span class="toc-text">子模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开始使用子模块"><span class="toc-text">开始使用子模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#克隆含有子模块的项目"><span class="toc-text">克隆含有子模块的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在包含子模块的项目上工作"><span class="toc-text">在包含子模块的项目上工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#从子模块的远端拉取上游修改"><span class="toc-text">从子模块的远端拉取上游修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#从项目远端拉取上游更改"><span class="toc-text">从项目远端拉取上游更改</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在子模块上工作"><span class="toc-text">在子模块上工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子模的块技巧"><span class="toc-text">子模的块技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#子模块遍历"><span class="toc-text">子模块遍历</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#子模块"><span class="toc-text">子模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开始使用子模块"><span class="toc-text">开始使用子模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#克隆含有子模块的项目"><span class="toc-text">克隆含有子模块的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在包含子模块的项目上工作"><span class="toc-text">在包含子模块的项目上工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#从子模块的远端拉取上游修改"><span class="toc-text">从子模块的远端拉取上游修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#从项目远端拉取上游更改"><span class="toc-text">从项目远端拉取上游更改</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在子模块上工作"><span class="toc-text">在子模块上工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子模的块技巧"><span class="toc-text">子模的块技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子模块的问题"><span class="toc-text">子模块的问题</span></a></li></ol></li></ol>
     </div>
   </section>
 
